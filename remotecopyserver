@@ -27,7 +27,7 @@ if ( $options{osx} ) {
 
 my $config = load_config();
 
-my $secret  = generate_secret();
+my $secret  = $config->{password} || generate_secret();
 my $address = $config->{server_address} || $options{address} || '127.0.0.1';
 my $port    = $config->{port} || $options{port} || 12345;
 my $quiet   = $config->{quiet} || $options{quiet} || 0;
